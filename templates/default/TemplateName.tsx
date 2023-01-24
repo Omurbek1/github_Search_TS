@@ -1,8 +1,9 @@
 import styles from './TemplateName.module.scss';
 
-interface TemplateNameProps { }
+import React from 'react';
 
-export const TemplateName = ({ }: TemplateNameProps) => (
+export const TemplateName = () => (
+  
   <div className={styles.templateName}>
     TemplateName Component
   </div>
