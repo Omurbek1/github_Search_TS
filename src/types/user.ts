@@ -1,6 +1,6 @@
 export type LocalGithubUser = {
     login: string,
-    id: string,
+    id: number,
     avatar: string,
     name: string,
     company: string,
@@ -8,11 +8,11 @@ export type LocalGithubUser = {
     location: string,
     bio: string,
     twitter: string,
-    repos:string,
-    followers:number,
-    following: string,
+    repos: number,
+    followers: number,
+    following: number,
     created: string,
-    
+
 }
 
 export type GithubUser = {
@@ -25,13 +25,13 @@ export type GithubUser = {
     location: string,
     bio: string,
     twitter_username: string,
-    followers:number,
-    following: string,
+    followers: number,
+    following: number,
     created_at: string,
-    
+
 }
 export type GitHubError = {
     message: string,
-    documentaion_url:string
-    
+    documentaion_url: string
+
 }
