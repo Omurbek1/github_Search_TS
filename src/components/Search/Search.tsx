@@ -19,7 +19,7 @@ export const Search = ({ hasError, onSubmit }: ISearch) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement & FormFieldsd>) => {
     event.preventDefault();
     const text = event.currentTarget.username.value;
-    if (text) {
+    if (text.trim()) {
       onSubmit(text);
       event.currentTarget.reset()
     }
