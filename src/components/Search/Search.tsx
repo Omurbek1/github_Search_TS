@@ -1,6 +1,6 @@
 import styles from './Search.module.scss';
 import { ReactComponent as SearchIcon } from '../../assets/icon-search.svg'
-import React, { useRef } from 'react';
+import React from 'react';
 import { Button } from '../Button';
 
 
