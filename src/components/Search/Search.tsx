@@ -8,19 +8,31 @@ interface ISearch {
   hasError: boolean,
   onSubmit: (text: string) => void
 }
-export const Search = ({ hasError, onSubmit }: ISearch) => {
-  const searchRef = useRef<HTMLInputElement | null>(null)
 
-  const handleSubmit = (event: React.FormEvent) => {
+type FormFieldsd = {
+  username:HTMLInputElement
+}
+
+export const Search = ({ hasError, onSubmit }: ISearch) => {
+  // const searchRef = useRef<HTMLInputElement | null>(null)
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement & FormFieldsd>) => {
     event.preventDefault();
-    const text = searchRef.current ? searchRef.current.value : '';
+    const text = event.currentTarget.username.value;
     if (text) {
       onSubmit(text);
-      if (searchRef.current) 
-        searchRef.current.value = '';
-      
+      event.currentTarget.reset()
     }
+    // const text = searchRef.current ? searchRef.current.value : '';
+    // if (text) {
+    //   onSubmit(text);
+    //   if (searchRef.current) 
+    //     searchRef.current.value = '';
+      
+    // }
   }
+  //!ToDO dsd
+
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.search}>
@@ -29,7 +41,7 @@ export const Search = ({ hasError, onSubmit }: ISearch) => {
           <SearchIcon />
         </label>
         <input
-          ref={searchRef}
+          // ref={searchRef}
           type='text'
           className={styles.textField}
           id='search'
